@@ -2,19 +2,31 @@
 $greyLight:#131313;
 $greyLighter:#282828;
 $greyText:#b3b3b3
-$greyNav:#090909 */
+$greyNav:#090909 
+$greenBody:#1db954*/
 * {
     box-sizing: border-box;
   }
+  @font-face {
+      font-family: CircularSpotifyTxt-Black;
+      src: url(./fonts/CircularSpotifyTxT-Black.ttf);
+  }
+body{
+    font-family: CircularSpotifyTxt-Black;
+    text-decoration: none;
 
+}
 .App {
     height:calc(100vh - 90px);
     background: #131313;
     display: flex;
+    text-decoration: none;
+
  
 }
+
 .navBar{
-    width: 228px;
+    width: 260px;
     height:100%;
     background:#040404;
     padding: 10px;
@@ -38,16 +50,37 @@ ul li{
     list-style-type: none;
     border-radius: 5px;
     font-size: 0.9rem;
-    padding: 0.8rem;
+    padding: 0.5rem 0.8rem;
     cursor:pointer;
     transition: all 0.3s ease-in-out ;
+    font-family: CircularSpotifyTxt-Black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
    
+}
+ul a{
+    color: inherit;
+    text-decoration: none;
+}
+ul a :visited{
+    color: inherit;
+    text-decoration: none;
 }
 ul li:hover{
     color:white
 }
 ul li .active{
+    color: white;
     background: #282828;
+}
+li svg .active{
+   fill: white;
+}
+
+li svg{
+    fill:white;
+    margin-right: 15px;
 }
 .cookies{
     font-size: 0.6rem;
@@ -71,6 +104,7 @@ ul li .active{
     align-items: center;
     justify-content: center;
     color: white;
+    border-top: 1px #040404;
 }
 .navHeader{
     background: #090909;
@@ -80,23 +114,41 @@ ul li .active{
     align-items: center;
     color: white;
     padding: 2.1rem ;
+    position: fixed;
+    top: 0;
+    z-index: 2;
 }
 .main{
-    width:100%;
+    width:100%;   
+    overflow-y: scroll;
+    padding-top: 3.4rem;
     
 }
 .mainContent{
     color:white;
     padding:0.5rem 2rem;
+   
 }
  .card{
     background:#282828 ;
     border-radius: 10px;
+    max-height: 290px;
     width: 200px;
     overflow: hidden;
     padding:1.2rem;
     box-shadow: 0 10px 0 rgba(0,0,0,.3) 0 1px 2px 0 
     rgba(0,0,0,.2);
+    position: relative;
+    margin-right: 1.2rem;
+    text-decoration: none;
+
+
+}
+.card :hover {
+    opacity: 1;
+}
+.cardImage :hover{
+    opacity: 1;
 }
 .cardImage{
     height: 180px;
@@ -112,7 +164,51 @@ ul li .active{
     padding: 0.4rem 0;
     
 }
-.cardContent h3{
+.cardContent h3,h2{
     font-size: .9rem;
     font-weight: 600;
+    margin-bottom: 0;
+    letter-spacing: .6px;
+}
+.cardContent span{
+    font-size: .8rem;
+    color: #b3b3b3;
+
+}
+.playIcon{
+    width: 40px;
+    height:40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    background: #1db954;
+    position: absolute;
+    right:1.2rem;
+    bottom: 1.2rem;
+    margin-left: auto;
+    opacity: 0;
+}
+.playIcon svg{
+    margin: auto;
+}
+
+.cardsWrap{
+    padding-bottom: 2rem;
+    
+}
+.cardsWrapInner {
+    display: flex;
+}
+.subtext{
+    font: .5rem;
+    color: #b3b3b3;
+    margin-top: .5rem;
+}
+.seeAll{
+    float: right;
+}
+a:-webkit-any-link {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
 }

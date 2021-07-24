@@ -1,4 +1,8 @@
 import React from "react";
+import {ReactComponent as Homeicon} from '../svgs/home.svg'
+import {ReactComponent as Searchicon} from '../svgs/search.svg'
+import {ReactComponent as YourLibraryicon} from '../svgs/library.svg'
+import { Link } from "react-router-dom";
 
 const NavBar = () =>{
 return(
@@ -13,9 +17,13 @@ return(
      </svg>
     </div>
     <ul>
-      <li className ="active">Home</li>
-      <li>Search</li>
-      <li>Your Library</li>
+    <Link to="/">
+      <li className ="active">
+      <Homeicon />
+      Home</li>
+      </Link>
+      <Link to="/search"><li> <Searchicon/>Search</li></Link>
+      <Link to="/yourlibrary"><li><YourLibraryicon/>Your Library</li></Link>
     </ul>
     <div className="cookies">
         <span>Cookies</span>
